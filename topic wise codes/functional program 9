@@ -1,0 +1,18 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("enter the number");
+        Scanner in=new Scanner(System.in);
+        int x=in.nextInt();
+        int factorial=fact(x);
+        System.out.println(factorial);
+    }
+    static int fact(int a){
+        int z=1;
+        for(int i=a;i>0;i--){
+            z=z*i;
+        }
+        return z;
+
+    }
+}
