@@ -1,0 +1,34 @@
+import java.util.Arrays;
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("enter the array size first rows second colums ");
+        Scanner in=new Scanner(System.in);
+        int a=in.nextInt();
+        int b=in.nextInt();
+        int[][] x=new int[a][b];
+        for (int i=0;i<x.length;i++){
+            for (int y=0;y<x[i].length;y++){
+                x[i][y]=in.nextInt();
+            }
+        }
+        for (int i=0;i<x.length;i++){
+                System.out.println(Arrays.toString(x[i]));
+            }
+
+        int high=0;
+        for (int i=0;i<x.length;i++){
+            int sum=0;
+            for(int y=0;y<x[i].length;y++){
+              sum=x[i][y]+sum;
+            }
+            if(sum>=high){
+               high=sum ;
+            }
+        }
+        System.out.println("the richest wealth"+high);
+
+
+
+    }
+}
