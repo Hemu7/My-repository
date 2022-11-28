@@ -1,0 +1,16 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("enter the two numbers");
+        int ex=multiple();
+        System.out.println(ex);
+    }
+
+    static int multiple() {
+        Scanner in=new Scanner(System.in);
+        int x=in.nextInt();
+        int y=in.nextInt();
+        int z=x*y;
+        return z;
+    }
+}
