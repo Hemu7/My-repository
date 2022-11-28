@@ -1,1 +1,7 @@
-s ca
+
+public class Main {
+    public static void main(String[] args) {
+    
+   system.ou.println("hello world!")
+            }
+}
