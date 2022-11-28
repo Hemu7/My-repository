@@ -1,0 +1,26 @@
+import  java.util.Scanner;
+import java.util.Arrays;
+import java.util.ArrayList;
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("enter the array length");
+        Scanner in = new Scanner(System.in);
+        int x = in.nextInt();
+        int[] y = new int[x];
+        for (int i = 0; i < y.length; i++) {
+            y[i] = in.nextInt();
+        }
+        int[] z = new int[y.length];
+            for (int i = 0; i < y.length; i++) {
+                int count = 0;
+                for (int a = 0; a < y.length; a++) {
+                    if (y[i] > y[a]) {
+                        count++;
+                    }
+                }
+                z[i]=count;
+            }
+
+        System.out.println(Arrays.toString(z));
+    }
+}
