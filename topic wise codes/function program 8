@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("enter the marks");
+        Scanner in=new Scanner(System.in);
+        int x=in.nextInt();
+        String grade =marks(x);
+        System.out.println(grade);
+    }
+    static String marks(int a){
+
+        if(  a>=90 && a<=100){
+           return "AA";
+        }
+        else if (a>=80 && a<=89  ) {
+            return "bb";
+        }
+        else if (a>=70 && a<=79) {
+            return "cc";
+        }
+        else if ( a>=60 && a<=69) {
+            return "dd";
+        }
+        else if ( a>=50 && a<=59) {
+            return "ee";
+        }
+        else{
+            return "fail";
+    }
+    }
+}
