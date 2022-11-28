@@ -1,0 +1,37 @@
+import java.util.Arrays;
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        System.out.println(" enter the matrix size first enter the rows and next column");
+        sum();
+    }
+    static void sum(){
+      Scanner in=new Scanner(System.in);
+      int a=in.nextInt();
+      int b=in.nextInt();
+      int[][] arr=new int[a][b];
+      System.out.println("ENTER THE ARRAY");
+      for (int i=0;i<arr.length;i++){
+          for (int y=0;y<arr[i].length;y++){
+              arr[i][y]=in.nextInt();
+          }
+      }
+      for (int i=0;i< arr.length;i++){
+        System.out.println(Arrays.toString(arr[i]));
+      }
+      int[][] invert=new int[a][b];
+      int col=-1;
+      int row=-1;
+      for (int i=0;i<arr.length;i++){
+          row++;
+            for (int y=arr[i].length-1;y>=0;y--) {                                         //i didnot created the new array at first
+                      col++;                                                                 // int temp=arr[i][y];
+                invert[row][col]= arr[i][y];                                               // arr[i][y]=arr[i][b-y];
+                                                                                // arr[i][b-y]=temp;
+            }
+      }
+        for (int i=0;i< arr.length;i++){
+      System.out.println(Arrays.toString(invert[i]));
+        }
+    }
+}
