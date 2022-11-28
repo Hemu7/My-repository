@@ -1,0 +1,21 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        int[][] arr={{1950,1961},
+                     {1960,1971},
+                     {1970,1981}
+                     };
+        System.out.println("enter the year");
+        Scanner in=new Scanner(System.in);
+        int year=in.nextInt();
+        int count=0;
+        for(int i =0;i<arr.length;i++){
+                 int x=arr[i][0];
+                int y=arr[i][1];
+                if (year>=x && year<y){
+                    count++;
+            }
+        }
+        System.out.println(count);
+    }
+}
