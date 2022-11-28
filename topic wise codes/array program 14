@@ -1,0 +1,32 @@
+import java.util.Arrays;
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        int m=2;
+        int n=3;
+        int[][] indices= {{0, 1},
+                          {1, 1}
+        };
+        main(m,n,indices);
+    }
+    static void main(int m,int n,int[][] indices){
+        int[][] ans=new int[m][n];
+        for(int i=0;i< indices.length;i++){                 //try to think out of box and in that try to think
+            for(int j=0;j<n;j++){                               //    in the array indices always u missing that part
+                ans[indices[i][0]][j]++;
+            }
+            for (int j=0;j<m;j++){
+                ans[j][indices[i][1]]++;
+            }
+        }
+        int count=0;
+        for(int i=0;i< ans.length;i++){
+            for(int j=0;j< ans[i].length;j++){
+                if(ans[i][j]%2 !=0){                               //!=        not equal operator
+                    count++;
+                }
+            }
+        }
+        System.out.println(count);
+    }
+}
