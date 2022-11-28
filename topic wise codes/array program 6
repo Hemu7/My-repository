@@ -1,0 +1,34 @@
+import java.util.Arrays;
+import java.util.Scanner;
+public class Main {
+    public static void main(String args[]) {
+        Scanner in=new Scanner(System.in);
+        System.out.println("ENTER THE NUMBER OF KIDS AND ALSO ENTER THE EXTRA CANDIES ");
+        int x=in.nextInt();
+        int b=in.nextInt();
+        int[] a=new int[x];
+        System.out.println("enter the candies of each kid");
+        for (int i=0;i<a.length;i++){
+            a[i]=in.nextInt();
+        }
+        int max=0;
+        for(int i=0;i<a.length;i++){
+            if (max<a[i]){
+                max=a[i];
+            }
+        }
+        String[] d=new String[a.length];
+        int c=0;
+        for(int i=0;i<a.length;i++){
+             c=a[i]+b;
+            if (c>=max){
+                d[i]="true";
+            }
+            else {
+                d[i]="flase";
+            }
+        }
+        System.out.println(Arrays.toString(d));
+
+    }
+}
