@@ -1,0 +1,80 @@
+import java.util.*;
+
+@SuppressWarnings("removal")
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello world!");
+        Scanner in=new Scanner(System.in);
+        String c=null;
+        Set<Integer> ob=null;
+        try(in;){
+            try {
+                while (true) {
+                        System.out.println("choice==============");
+                        System.out.println("1.hashset 2.linkedset 3treeset 4.exit");
+                        System.out.println("enter the choice");
+                        switch (in.nextInt())
+                        {
+                            case 1:
+                                ob=new HashSet<Integer>();
+                                c="HASHSET";
+                                break;
+                            case 2:
+                                ob=new LinkedHashSet<Integer>();
+                                c="linkedhasset";
+                                break;
+                            case 3:
+                                ob= new TreeSet<Integer>();
+                                c="treeset";
+                                break;
+                            case 4:
+                                System.out.println("set operation stopped");
+                                    System.exit(0);
+                            default:
+                                System.out.println("wrong option");
+                                continue;
+                        }// end of switch
+                    System.out.println("perform operations"+c+"===========");
+                        xyz:
+                    while(true){
+                        System.out.println("enter the choice");
+                        System.out.println("1.ADD 2.REMOVE 3.EXIT");
+                        switch(in.nextInt()){
+                            case 1:
+                                System.out.println("enter the ele");
+                                ob.add(new Integer(in.nextInt()));
+                                System.out.println(ob.toString());
+                                break;
+                            case 2:
+                                if(ob.isEmpty()){
+                                    System.out.println("set is empty");
+                                }
+                                else{
+                                    System.out.println("enter the ele");
+                                    Integer ele =new Integer(in.nextInt());
+                                    if(ob.remove(ele)){
+                                        System.out.println("element removed success");
+                                    }
+                                    else{
+                                        System.out.println("invalid ele");
+                                    }
+                                    System.out.println(ob.toString());
+
+                                }
+                                break;
+                            case 3:
+                                System.out.println("operation"+c+"stopped");
+                                break xyz;
+                            default:
+                                System.out.println("wrong option");
+                                continue;
+                        }//end of switch
+                    }//end of while loop
+                }//end of while loop
+            }
+            catch (Exception e){
+                e.printStackTrace();
+            }// end of try
+        }//end of try
+    }
+}
