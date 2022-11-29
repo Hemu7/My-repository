@@ -1,0 +1,109 @@
+package userdefined;
+import java.util.*;
+import userdefined.product;
+public class demo {
+    public static void main(String[] args){
+        Scanner in=new Scanner(System.in);
+        String c=null;
+        Set<product> ob =null;
+        try(in;){
+            try{
+                while(true){
+                    System.out.println("=============choice=======");
+                    System.out.println("1.hashset 2.linkedhashset 3.treeset 4.exit");
+                    System.out.println("enter the choice");
+                    switch(Integer.parseInt(in.nextLine())){
+                        case 1:
+                            ob=new HashSet<product>();
+                            c="hashset";
+                            break;
+                        case 2:
+                            ob=new LinkedHashSet<product>();
+                            c="linkedhashset";
+                            break;
+                        case 3:
+                            ob=new TreeSet<product>();
+                            c="treeset";
+                            break;
+                        case 4:
+                            System.exit(0);
+                            break;
+                        default:
+                            System.out.println("invalid option");
+                            continue;
+                    }// end of switch
+                    System.out.println("stopped"+c+"======");
+                    xyz:
+                    while(true){
+                       System.out.println("enter the choice");
+                       System.out.println("1.ADD 2.REMOVE 3.EXIT");
+                       switch(Integer.parseInt(in.nextLine())){
+                           case 1:
+                               System.out.println("enter the code");
+                               String code=in.nextLine();
+                               System.out.println("enter the name");
+                               String name=in.nextLine();
+                               System.out.println("enter the price");
+                               float price=Float.parseFloat(in.nextLine());
+                               System.out.println("enter the qty");
+                               int qty=Integer.parseInt(in.nextLine());
+                                ob.add(new product(code,name,price,qty));
+                                System.out.println("=================Iterators====================");
+                                Iterator<product>it1=ob.iterator();
+                                while(it1.hasNext()){
+                                    System.out.println(it1.next());
+                                }//end of while loop
+                               System.out.println("==============iterator<e>============ java8 features");
+                                Iterator<product>it2=ob.iterator();
+                                it2.forEachRemaining((p)->
+                                {
+                                    System.out.println(p.toString());
+                                });
+                                System.out.println("=============spliterator<t>========java 8 features");
+                                Spliterator<product>sp=ob.spliterator();
+                                sp.forEachRemaining((q)->
+                                {
+                                    System.out.println(q.toString());
+                                });
+                                System.out.println("===============foreach java(8)==============");
+                                ob.forEach((k)->
+                                {
+                                    System.out.println(k.toString());
+                                });
+                                break;
+                           case 2:
+                               if (ob.isEmpty()){
+                                   System.out.println("empty collections");
+                               }
+                               else{
+                                   System.out.println("===enter the ele(prodcode)==");
+                                   String ele=in.nextLine();
+                                   Iterator<product>it4=ob.iterator();
+                                   while(it4.hasNext()){
+                                       product p=(product) it4.next();
+                                       if(p.code.equals(ele)){
+                                           if(ob.remove(p)){
+                                               System.out.println("removed");
+                                               break ;
+                                           }
+                                       }
+                                   }//end of while loop
+                                   System.out.println(ob.toString());
+                               }
+                               break ;
+                           case 3:
+                               System.out.println("operation ended");
+                               break xyz;
+                           default:
+                               System.out.println("INVALID OPTION");
+                               continue ;
+                       }//end of switch
+                    }//end of loop
+                }//end of while loop
+            } //end of try
+            catch(Exception e){
+                e.printStackTrace();
+            }
+        }// end of try
+    }
+}
